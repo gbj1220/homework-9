@@ -1,7 +1,18 @@
 import './App.css';
+import { Provider } from 'react-redux';
+import { reduxStore } from './store/redux-store';
+import ShoppingCart from './ShoppingCart/ShoppingCart';
 
 function App() {
-	return <div className='App'></div>;
+	return (
+		<>
+			<Provider store={reduxStore}>
+				<div className='App'>
+					<ShoppingCart />
+				</div>
+			</Provider>
+		</>
+	);
 }
 
 export default App;
