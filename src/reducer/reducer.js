@@ -1,15 +1,22 @@
 import { ADD_TO_CART } from '../actions/actions';
 
 export const reducer = (state, action) => {
-	switch (action.type) {
-		case ADD_TO_CART:
-			const newItem = action.payload.newItem;
-			return {
-				...state,
-				shoppingCart: {
-					...state.shoppingCart.items,
-					newItem,
-				},
-			};
+	try {
+		switch (action.type) {
+			case ADD_TO_CART:
+				const newItem = action.payload.newItem;
+				console.log(state);
+			// return {
+			// 	...state,
+			// 	shoppingCart: {
+			// 		...state.shoppingCart,
+			// 		items: [...state.shoppingCart.items, newItem],
+			// 	},
+			// };
+			default:
+				console.log('You got trouble');
+		}
+	} catch (error) {
+		console.log(error);
 	}
 };

@@ -1,27 +1,34 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { fetchProducts } from '../db-mock/dbMock';
-import { addToCartActionCreator, ADD_TO_CART } from '../actions/actions';
+import { addToCartActionCreator } from '../actions/actions';
 
-export default function ShoppingCart() {
+export default function DisplayItems() {
 	const products = fetchProducts();
-	console.log(products);
+	const dispatch = useDispatch();
+	// console.log(products);
 
-	return (
-		<div>
-			{products.map((item) => {
-				return (
-					<div>
-						<button
-							onClick={() =>
-								dispatch(addToCartActionCreator(item))
-							}
-						>
-							Add To Cart
-						</button>
-					</div>
-				);
-			})}
-		</div>
-	);
+	try {
+		return (
+			<div>
+				{products.map((item, i) => {
+					return (
+						<div key={i} style={{ margin: '20px' }}>
+							<div>{item.title}</div>
+							<div>{item.price}</div>
+							<button
+								onClick={() =>
+									dispatch(addToCartActionCreator(item))
+								}
+							>
+								Add To Cart
+							</button>
+						</div>
+					);
+				})}
+			</div>
+		);
+	} catch (error) {
+		console.log(error);
+	}
 }
