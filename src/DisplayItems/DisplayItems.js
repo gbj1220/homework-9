@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { fetchProducts } from '../db-mock/dbMock';
 import { addToCartActionCreator } from '../actions/actions';
 
-export default function DisplayItems() {
+function DisplayItems() {
 	const products = fetchProducts();
 	const dispatch = useDispatch();
 	// console.log(products);
@@ -32,3 +32,5 @@ export default function DisplayItems() {
 		console.log(error);
 	}
 }
+
+export default DisplayItems;

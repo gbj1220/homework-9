@@ -1,8 +1,8 @@
 import './App.css';
 import { Provider } from 'react-redux';
 import { reduxStore } from './store/redux-store';
-import DisplayItems from './ShoppingCart/DisplayItems';
-import ShoppingCart from './ShoppingCart/DisplayItems';
+import DisplayItems from './DisplayItems/DisplayItems';
+import ShoppingCart from './ShoppingCart/ShoppingCart';
 
 function App() {
 	return (
