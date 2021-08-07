@@ -4,7 +4,7 @@
 }
 
 html {
-	background-color: lightblue;
+	background-color: #505050;
 }
 
 .App-logo {
@@ -15,6 +15,13 @@ html {
 .shopping-cart-main {
 	max-height: 40%;
 	overflow-y: auto;
+}
+
+.cart-items {
+	display: flex;
+	justify-content: space-evenly;
+	border: #78fff1 solid 2px;
+	margin: 25px;
 }
 
 @media (prefers-reduced-motion: no-preference) {

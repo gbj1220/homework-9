@@ -2,21 +2,28 @@ import './App.css';
 import { Provider } from 'react-redux';
 import { reduxStore } from './store/redux-store';
 import DisplayItems from './DisplayItems/DisplayItems';
-import ShoppingCart from './ShoppingCart/ShoppingCart';
+import SignIn from './SignIn/SignIn';
+import CatFact from './CatFact/CatFact';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 function App() {
 	return (
 		<>
-			<Provider store={reduxStore}>
-				<div className='App'>
-					<div className='display-items'>
-						<DisplayItems />
-					</div>
-					<div className='shopping-cart'>
-						<ShoppingCart />
-					</div>
-				</div>
-			</Provider>
+			<Router>
+				<Provider store={reduxStore}>
+					<Switch>
+						<Route path='/login'>
+							<SignIn />
+						</Route>
+						<Route path='/'>
+							<DisplayItems />
+						</Route>
+						<Route path='/home'>
+							<CatFact />
+						</Route>
+					</Switch>
+				</Provider>
+			</Router>
 		</>
 	);
 }
